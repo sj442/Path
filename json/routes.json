@@ -1,0 +1,57 @@
+[
+  {
+    "agency_id":"151",
+    "route_id":"859",
+    "route_short_name":"PATH",
+    "route_long_name":"Hoboken - 33rd Street",
+    "route_desc":"",
+    "route_type":"2",
+    "route_url":"http://www.panynj.gov/path/pdf/path-map-schedule.pdf",
+    "route_color":"4d92fb",
+    "route_text_color":"000000"
+  },
+  {
+    "agency_id":"151",
+    "route_id":"860",
+    "route_short_name":"PATH",
+    "route_long_name":"Hoboken - World Trade Center",
+    "route_desc":"",
+    "route_type":"2",
+    "route_url":"http://www.panynj.gov/path/pdf/path-map-schedule.pdf",
+    "route_color":"65c100",
+    "route_text_color":"000000"
+  },
+  {
+    "agency_id":"151",
+    "route_id":"861",
+    "route_short_name":"PATH",
+    "route_long_name":"Journal Square - 33rd Street",
+    "route_desc":"",
+    "route_type":"2",
+    "route_url":"http://www.panynj.gov/path/pdf/path-map-schedule.pdf",
+    "route_color":"FF9900",
+    "route_text_color":"000000"
+  },
+  {
+    "agency_id":"151",
+    "route_id":"862",
+    "route_short_name":"PATH",
+    "route_long_name":"Newark - World Trade Center",
+    "route_desc":"",
+    "route_type":"2",
+    "route_url":"http://www.panynj.gov/path/pdf/path-map-schedule.pdf",
+    "route_color":"d93a30",
+    "route_text_color":"ffffff"
+  },
+  {
+    "agency_id":"151",
+    "route_id":"1024",
+    "route_short_name":"PATH",
+    "route_long_name":"Journal Square - 33rd Street (via Hoboken)",
+    "route_desc":"",
+    "route_type":"2",
+    "route_url":"http://www.panynj.gov/path/pdf/path-map-schedule.pdf",
+    "route_color":"FF9900",
+    "route_text_color":"000000"
+  }
+]

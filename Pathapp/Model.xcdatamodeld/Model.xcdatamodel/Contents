@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Routes" representedClassName="Routes" syncable="YES">
+        <attribute name="routeColor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routeID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="routeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routeTextCOlor" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Stops" representedClassName="Stops" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="stopID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="stopName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="StopTimes" representedClassName="StopTimes" syncable="YES">
+        <attribute name="arrivalTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="departureTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="stopID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="tripID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Trips" representedClassName="Trips" syncable="YES">
+        <attribute name="routeID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="serviceID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tripHeadsign" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tripID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tripName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WeekService" representedClassName="WeekService" syncable="YES">
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="serviceID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serviceName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Routes" positionX="45" positionY="192" width="128" height="103"/>
+        <element name="Stops" positionX="378" positionY="252" width="128" height="105"/>
+        <element name="StopTimes" positionX="378" positionY="108" width="128" height="105"/>
+        <element name="Trips" positionX="216" positionY="258" width="128" height="120"/>
+        <element name="WeekService" positionX="216" positionY="93" width="128" height="105"/>
+    </elements>
+</model>

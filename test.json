@@ -1,0 +1,133 @@
+{
+    routes =     (
+                {
+            bounds =             {
+                northeast =                 {
+                    lat = "40.71676";
+                    lng = "-74.01193000000001";
+                };
+                southwest =                 {
+                    lat = "40.71271";
+                    lng = "-74.03238";
+                };
+            };
+            copyrights = "Map data \U00a92013 Google";
+            legs =             (
+                                {
+                    "arrival_time" =                     {
+                        text = "7:55pm";
+                        "time_zone" = "America/New_York";
+                        value = 1383958500;
+                    };
+                    "departure_time" =                     {
+                        text = "7:51pm";
+                        "time_zone" = "America/New_York";
+                        value = 1383958260;
+                    };
+                    distance =                     {
+                        text = "1.1 mi";
+                        value = 1781;
+                    };
+                    duration =                     {
+                        text = "4 mins";
+                        value = 240;
+                    };
+                    "end_address" = "Exchange Place, Jersey City, NJ 07302, USA";
+                    "end_location" =                     {
+                        lat = "40.71676";
+                        lng = "-74.03238";
+                    };
+                    "start_address" = "World Trade Center, New York, NY 10006, USA";
+                    "start_location" =                     {
+                        lat = "40.71271";
+                        lng = "-74.01193000000001";
+                    };
+                    steps =                     (
+                                                {
+                            distance =                             {
+                                text = "1.1 mi";
+                                value = 1781;
+                            };
+                            duration =                             {
+                                text = "4 mins";
+                                value = 240;
+                            };
+                            "end_location" =                             {
+                                lat = "40.71676";
+                                lng = "-74.03238";
+                            };
+                            "html_instructions" = "Train towards Hoboken";
+                            polyline =                             {
+                                points = "munwFpmvbM?DiDpYgEt^oDvZgGrh@";
+                            };
+                            "start_location" =                             {
+                                lat = "40.71271";
+                                lng = "-74.01193000000001";
+                            };
+                            "transit_details" =                             {
+                                "arrival_stop" =                                 {
+                                    location =                                     {
+                                        lat = "40.71676";
+                                        lng = "-74.03238";
+                                    };
+                                    name = "Exchange Place";
+                                };
+                                "arrival_time" =                                 {
+                                    text = "7:55pm";
+                                    "time_zone" = "America/New_York";
+                                    value = 1383958500;
+                                };
+                                "departure_stop" =                                 {
+                                    location =                                     {
+                                        lat = "40.71271";
+                                        lng = "-74.01193000000001";
+                                    };
+                                    name = "World Trade Center";
+                                };
+                                "departure_time" =                                 {
+                                    text = "7:51pm";
+                                    "time_zone" = "America/New_York";
+                                    value = 1383958260;
+                                };
+                                headsign = Hoboken;
+                                line =                                 {
+                                    agencies =                                     (
+                                                                                {
+                                            name = "Port Authority Trans-Hudson Corporation";
+                                            phone = "(800) 234-7284";
+                                            url = "http://www.panynj.gov/path/";
+                                        }
+                                    );
+                                    color = "#65c100";
+                                    name = "Hoboken - World Trade Center";
+                                    "short_name" = PATH;
+                                    "text_color" = "#000000";
+                                    url = "http://www.panynj.gov/path/pdf/path-map-schedule.pdf";
+                                    vehicle =                                     {
+                                        icon = "//maps.gstatic.com/mapfiles/transit/iw/6/rail.png";
+                                        name = Train;
+                                        type = "HEAVY_RAIL";
+                                    };
+                                };
+                                "num_stops" = 1;
+                            };
+                            "travel_mode" = TRANSIT;
+                        }
+                    );
+                    "via_waypoint" =                     (
+                    );
+                }
+            );
+            "overview_polyline" =             {
+                points = "munwFpmvbMiXx~B";
+            };
+            summary = "";
+            warnings =             (
+            );
+            "waypoint_order" =             (
+            );
+        }
+    );
+    status = OK;
+}
+
