@@ -14,6 +14,7 @@
 		166A9E76182CF0570086AFA4 /* RouteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A9E75182CF0570086AFA4 /* RouteInfo.m */; };
 		166A9E79182D503C0086AFA4 /* AllStopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A9E78182D503C0086AFA4 /* AllStopsViewController.m */; };
 		166A9E7C182D5B110086AFA4 /* ArrivalStopsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 166A9E7B182D5B110086AFA4 /* ArrivalStopsViewController.m */; };
+		167EC370187C46AE00B55953 /* NSDate+ComposeDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 167EC36F187C46AE00B55953 /* NSDate+ComposeDate.m */; };
 		168266EE182AEBB0004A1060 /* DataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 168266ED182AEBB0004A1060 /* DataStore.m */; };
 		168266FE182B71B8004A1060 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 168266FC182B71B8004A1060 /* Model.xcdatamodeld */; };
 		16826707182BE52E004A1060 /* Stops.m in Sources */ = {isa = PBXBuildFile; fileRef = 16826706182BE52E004A1060 /* Stops.m */; };
@@ -87,6 +88,8 @@
 		166A9E78182D503C0086AFA4 /* AllStopsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllStopsViewController.m; sourceTree = "<group>"; };
 		166A9E7A182D5B110086AFA4 /* ArrivalStopsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrivalStopsViewController.h; sourceTree = "<group>"; };
 		166A9E7B182D5B110086AFA4 /* ArrivalStopsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrivalStopsViewController.m; sourceTree = "<group>"; };
+		167EC36E187C46AE00B55953 /* NSDate+ComposeDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ComposeDate.h"; sourceTree = "<group>"; };
+		167EC36F187C46AE00B55953 /* NSDate+ComposeDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ComposeDate.m"; sourceTree = "<group>"; };
 		168266EC182AEBB0004A1060 /* DataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStore.h; sourceTree = "<group>"; };
 		168266ED182AEBB0004A1060 /* DataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStore.m; sourceTree = "<group>"; };
 		168266FD182B71B8004A1060 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -236,6 +239,8 @@
 				A39CF5DF184CB4CD0097F7A1 /* UIButton+border.m */,
 				16C7C63E1829F6D100F014D7 /* ViewController.h */,
 				16C7C63F1829F6D100F014D7 /* ViewController.m */,
+				167EC36E187C46AE00B55953 /* NSDate+ComposeDate.h */,
+				167EC36F187C46AE00B55953 /* NSDate+ComposeDate.m */,
 				16C7C661182A9DC300F014D7 /* TripsListviewController.h */,
 				16C7C662182A9DC300F014D7 /* TripsListviewController.m */,
 				166A9E77182D503C0086AFA4 /* AllStopsViewController.h */,
@@ -514,6 +519,7 @@
 				1682672C182BE9D3004A1060 /* WeekService.m in Sources */,
 				166A9E76182CF0570086AFA4 /* RouteInfo.m in Sources */,
 				168266EE182AEBB0004A1060 /* DataStore.m in Sources */,
+				167EC370187C46AE00B55953 /* NSDate+ComposeDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

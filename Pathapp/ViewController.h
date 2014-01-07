@@ -28,7 +28,6 @@
 @property (strong, nonatomic) NSString *arrivalStation;
 @property (strong, nonatomic) NSDate *dateChosen;
 @property (strong, nonatomic) NSDate *timeChosen;
-@property (strong, nonatomic) NSNumber *timeInterval;
 
 @property (weak, nonatomic) IBOutlet UIButton *departureButton;
 
