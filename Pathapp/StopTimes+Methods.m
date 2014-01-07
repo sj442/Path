@@ -11,16 +11,16 @@
 
 @implementation StopTimes (Methods)
 
--(id)initWithTripID:(NSString*) tripID arrivalTime: (NSDate*) arrivalTime departureTime: (NSDate*) departureTime stopID:(NSNumber*) stopID{
-self = [NSEntityDescription insertNewObjectForEntityForName:@"StopTimes" inManagedObjectContext:[DataStore sharedStore].managedObjectContext];    if (self) {
+-(id)initWithTripID:(NSString*) tripID arrivalTime: (NSString*) arrivalTime departureTime: (NSString*) departureTime stopID:(NSNumber*) stopID andStopSequence:(NSNumber *)stopSequence{
+self = [NSEntityDescription insertNewObjectForEntityForName:@"StopTimes" inManagedObjectContext:[DataStore sharedStore].managedObjectContext];
+    if (self) {
         self.tripID = tripID;
         self.arrivalTime = arrivalTime;
         self.departureTime = departureTime;
         self.stopID = stopID;
+        self.stop_sequence = stopSequence;
     }
-    
     return self;
 }
-
 
 @end

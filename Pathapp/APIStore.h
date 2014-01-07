@@ -14,11 +14,7 @@
 @interface APIStore : NSObject
 
 @property (strong, nonatomic) NSMutableArray *routesArray;
-
-
 @property (strong, nonatomic) NSMutableArray *errorArray;
-
-
 
 +(APIStore*)sharedAPIStore;
 

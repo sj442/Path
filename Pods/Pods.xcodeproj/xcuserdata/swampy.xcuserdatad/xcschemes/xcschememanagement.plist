@@ -9,7 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-DCKeyValueObjectMapping.xcscheme</key>
+		<key>Pods-MMPickerView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4B2C37DF02364D2FAFD156D0</key>
+		<key>335D67C6B34443CC81DAA414</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BAB535B980FF46B38A968D9C</key>
+		<key>7067338CDBFF4FEABBDE9A4B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB9D9CB4139B48F5BED417CA</key>
+		<key>8FDB6D2CBA494DBB8BF4B8A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EE94E68407984DCBA3D974E2</key>
+		<key>BC905E79EFD64A64BD5257B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

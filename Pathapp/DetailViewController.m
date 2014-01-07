@@ -30,6 +30,7 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.showMap.hidden = YES;
 	// Do any additional setup after loading the view.
 }
 

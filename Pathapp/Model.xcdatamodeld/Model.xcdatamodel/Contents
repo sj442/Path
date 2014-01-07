@@ -13,8 +13,9 @@
         <attribute name="stopName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="StopTimes" representedClassName="StopTimes" syncable="YES">
-        <attribute name="arrivalTime" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="departureTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="arrivalTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="departureTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stop_sequence" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="stopID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="tripID" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -32,10 +33,10 @@
         <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Routes" positionX="45" positionY="192" width="128" height="103"/>
-        <element name="Stops" positionX="378" positionY="252" width="128" height="105"/>
-        <element name="StopTimes" positionX="378" positionY="108" width="128" height="105"/>
-        <element name="Trips" positionX="216" positionY="258" width="128" height="120"/>
-        <element name="WeekService" positionX="216" positionY="93" width="128" height="105"/>
+        <element name="Routes" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Stops" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="StopTimes" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Trips" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="WeekService" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

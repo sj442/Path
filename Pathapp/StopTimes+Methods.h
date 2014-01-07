@@ -10,6 +10,6 @@
 
 @interface StopTimes (Methods)
 
--(id)initWithTripID:(NSString*) tripID arrivalTime: (NSDate*) arrivalTime departureTime: (NSDate*) departureTime stopID:(NSNumber*) stopID;
+-(id)initWithTripID:(NSString*) tripID arrivalTime: (NSString*) arrivalTime departureTime: (NSString*) departureTime stopID:(NSNumber*) stopID andStopSequence:(NSNumber*) stopSequence;
 
 @end

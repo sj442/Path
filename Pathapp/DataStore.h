@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <SBJson.h>
+#import <SBJson4.h>
 #import <CoreData/CoreData.h>
 
 extern const NSString *filepath;
@@ -31,7 +31,6 @@ extern const NSString *filepath;
 @property (strong, nonatomic) NSFetchedResultsController *weekServiceFetchedResultsController;
 
 @property (strong, nonatomic) NSFetchedResultsController *tripsFetchedResultsController;
-
 
 +(DataStore*)sharedStore;
 

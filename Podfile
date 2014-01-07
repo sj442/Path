@@ -1,4 +1,4 @@
-platform:ios,'6.0'
+platform:ios,'6.1'
 pod 'SBJson'
-pod 'DCKeyValueObjectMapping'
 pod 'AFNetworking', '~> 1.3.3'
+pod 'MMPickerView'

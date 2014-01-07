@@ -1,16 +1,16 @@
 PODS:
   - AFNetworking (1.3.3)
-  - DCKeyValueObjectMapping (1.4)
-  - SBJson (3.2)
+  - MMPickerView (0.0.1)
+  - SBJson (4.0.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 1.3.3)
-  - DCKeyValueObjectMapping
+  - MMPickerView
   - SBJson
 
 SPEC CHECKSUMS:
-  AFNetworking: 0700ec7a58c36ad217173e167f6e4df7270df66b
-  DCKeyValueObjectMapping: 39adaf0a54ff6368a22d9221db60f0696d81ad7b
-  SBJson: e60b4dc22448c2ae1e754b523a4ab53408e85c8d
+  AFNetworking: 61fdd49e2ffe6380378df37b3b6e70630bb9dd66
+  MMPickerView: 29b43ebf73d4a163700cb3a80982711ce595ce12
+  SBJson: 726ae465963fd4a7104920ab0b463df4deb603b1
 
 COCOAPODS: 0.26.2

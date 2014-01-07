@@ -17,15 +17,6 @@
 
 +(QueryManager*)sharedQueryManager;
 
--(NSNumber*)getstopIDFromStopName: (NSString*)stopName;
-
--(void) stopsForRouteId:(NSNumber*)routeID;
-
--(void)stops;
-
--(NSString*)routeIDForOriginStop: (NSString*)originstop anddestinationStop:(NSString*)destinationStop;
-
--(NSArray*)routeIDsForOriginStopName:(NSString*)originStopName andDestinationStopname:(NSString*)destinationStopname;
-
+-(void)getTripsForDepartureStation:(NSString*)departureStation andArrivalStation:(NSString*) arrivalStation andDepartAtTime:(NSString*) departTime andArriveByTime:(NSString*)ArriveTime andDate:(NSString*)tripDate;
 
 @end

@@ -2,7 +2,7 @@
 //  StopTimes.m
 //  Pathapp
 //
-//  Created by Sunayna Jain on 11/7/13.
+//  Created by Sunayna Jain on 12/9/13.
 //  Copyright (c) 2013 LittleAuk. All rights reserved.
 //
 
@@ -15,5 +15,6 @@
 @dynamic departureTime;
 @dynamic stopID;
 @dynamic tripID;
+@dynamic stop_sequence;
 
 @end

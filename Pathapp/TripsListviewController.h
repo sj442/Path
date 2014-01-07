@@ -11,7 +11,7 @@
 #import "ViewController.h"
 #import "RouteInfo.h"
 
-@interface TripsListviewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface TripsListviewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSString *tripName;
 @property (strong, nonatomic) NSString *tripDuration;

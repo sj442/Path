@@ -18,4 +18,7 @@
 
 - (IBAction)showMapClicked:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *showMap;
+
+
 @end
