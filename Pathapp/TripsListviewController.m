@@ -36,7 +36,7 @@
     self.mystore = [APIStore sharedAPIStore];
     
     if ([self.mystore.routesArray count] ==0){
-        UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Sorry, we couldn't find any routes. Please change your search" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Sorry, we couldn't find any routes. Please modify your search" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertview show];
     }
     

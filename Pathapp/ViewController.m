@@ -48,12 +48,18 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.1f green:0.4f blue:0.9f alpha:0.5f];
     //[[DataStore sharedStore] jsonParser];
     [self.nowButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.nowButton setButtonRoundedborder:3.0f borderwidth:2.0f color:[UIColor whiteColor]];
+    //[self.nowButton setButtonRoundedborder:0.0f borderwidth:2.0f color:[UIColor whiteColor]];
+    self.nowButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15.0f];
+    self.nowButton.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1.0f];
+    
     [self.goButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.goButton setButtonRoundedborder:3.0f borderwidth:2.0f color:[UIColor whiteColor]];
-       
+    //[self.goButton setButtonRoundedborder:0.0f borderwidth:2.0f color:[UIColor whiteColor]];
+    self.goButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15.0f];
+    self.goButton.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1.0f];
+
+
     [self.departureButton setTitle:@"Departure Station" forState:UIControlStateNormal];
-    [self.departureButton setBackgroundColor:[UIColor colorWithWhite:0.8 alpha:1.0f]];
+    [self.departureButton setBackgroundColor:[UIColor colorWithWhite:0.7 alpha:1.0f]];
     self.departureButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15.0f];
     [self.departureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
@@ -63,7 +69,7 @@
     [trainicon setBackgroundImage:[UIImage imageNamed:@"trainicon.jpg"] forState:UIControlStateNormal];
     [self.arrivalButton setTitle:@"Arrival Station" forState:UIControlStateNormal];
     [self.arrivalButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [self.arrivalButton setBackgroundColor:[UIColor colorWithWhite:0.8 alpha:1.0f]];
+    [self.arrivalButton setBackgroundColor:[UIColor colorWithWhite:0.7 alpha:1.0f]];
     
     UIButton *trainButton = [[UIButton alloc]initWithFrame:CGRectMake(5, 7, 25, 25)];
     
@@ -72,8 +78,24 @@
     [self.swapButton setBackgroundImage:[UIImage imageNamed:@"swap.png"] forState:UIControlStateNormal];
     self.arrivalButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15.0f];
     self.stopsArray = [[NSArray alloc]initWithObjects:@"Hoboken", @"Newport", @"Newark Penn Station", @"Harrison", @"Journal Square", @"Exchange Place", @"Grove Street", @"World Trade Center", @"Christopher Street", @"9th Street", @"14th Street", @"23rd Street", @"33rd Street", nil];
-
-    NSLog(@"Reached here");
+    
+    self.chooseDateButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15.0f];
+    
+    self.chooseTimeButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15.0f];
+    
+    self.chooseDateButton.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1.0f];
+    self.chooseTimeButton.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1.0f];
+    
+    [self.chooseDateButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    [self.chooseTimeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    UIButton *calendarIcon = [[UIButton alloc]initWithFrame:CGRectMake(5, 6, 27, 27)];
+    UIButton *timeIcon = [[UIButton alloc]initWithFrame:CGRectMake(5, 6, 27, 27)];
+    [calendarIcon setBackgroundImage:[UIImage imageNamed:@"calendaricon.png"] forState:UIControlStateNormal];
+    [timeIcon setBackgroundImage:[UIImage imageNamed:@"timeicon.png"] forState:UIControlStateNormal];
+    [self.chooseDateButton addSubview:calendarIcon];
+    [self.chooseTimeButton addSubview:timeIcon];
         }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -109,62 +131,6 @@ NSNumber *lon =  [[APIStore sharedAPIStore] getLongitudeForStop:self.arrivalStat
     return lon;
 }
 
-
-//#pragma mark- datePickerMethods
-//
-//- (IBAction)DatePressed:(id)sender {
-//    self.datePickerView.hidden = NO;
-//    NSArray *viewArray = self.datePickerView.subviews;
-//    NSLog(@"first object:%@", [viewArray firstObject] );
-//}
-//
-//- (IBAction)TimePressed:(id)sender {
-//    self.timePickerView.hidden = NO;
-//    NSArray *viewArray = self.timePickerView.subviews;
-//    NSLog(@"first object:%@", [viewArray firstObject] );
-//    self.timePickerView.hidden = NO;
-//}
-//
-//- (IBAction)donePressed:(id)sender {
-//    
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
-//    
-//    [formatter setDateFormat:@"dd MMM yy"];
-//    
-//    NSString *dateString = [formatter stringFromDate:((UIDatePicker*)[self.datePickerView.subviews firstObject]).date];
-//    
-//    self.dateChosen = ((UIDatePicker*)[self.datePickerView.subviews firstObject]).date;
-//    
-//    self.dateButton.titleLabel.text = dateString;
-//    
-//    self.datePickerView.hidden = YES;
-//    
-//    NSLog(@"date is:%@", dateString);
-//}
-//
-//-(void)configureDatePicker{
-//    
-//    ((UIDatePicker*)[self.datePickerView.subviews firstObject]).datePickerMode = UIDatePickerModeDate;
-//}
-//
-//- (IBAction)cancelPressed:(id)sender {
-//    self.datePickerView.hidden = YES;
-//}
-//
-//#pragma mark- timepickermethods
-//
-//- (IBAction)timePickerDonePressed:(id)sender {
-//    self.timeChosen = ((UIDatePicker*)[self.timePickerView.subviews firstObject]).date;
-//    self.timePickerView.hidden = YES;
-//    NSLog(@"time chosen:%@", self.timeChosen);
-//}
-//
-//- (IBAction)timePickerCancelPressed:(id)sender {
-//    self.timePickerView.hidden = YES;
-//}
-//
-
-
 - (IBAction)nowPressed:(id)sender {
     
     NSDate *now = [NSDate date];
@@ -184,7 +150,6 @@ NSNumber *lon =  [[APIStore sharedAPIStore] getLongitudeForStop:self.arrivalStat
         NSLog(@"shared instance:%@",[APIStore sharedAPIStore]);
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        
         TripsListviewController *tlvc = [storyboard instantiateViewControllerWithIdentifier:@"tripsList"];
         [self.navigationController pushViewController:tlvc animated:YES];
     }];
@@ -203,24 +168,6 @@ NSNumber *lon =  [[APIStore sharedAPIStore] getLongitudeForStop:self.arrivalStat
     arvc.delegate = self;
     [self.navigationController presentViewController:arvc animated:YES completion:nil];
 }
-
-//- (IBAction)GoPressed:(id)sender {
-//
-//    NSDate *referenceDate = [NSDate dateWithTimeIntervalSince1970:0];
-//    
-//    NSTimeInterval timeInterval = [self.dateChosen timeIntervalSinceNow];
-//    NSTimeInterval referenceTimeInterval = [referenceDate timeIntervalSinceNow];
-//    
-//    NSTimeInterval diff = timeInterval-referenceTimeInterval;
-//    self.timeInterval = [NSNumber numberWithInteger:round(diff)];
-//    NSLog(@"time in seconds:%f", diff);
-//    
-//    [[APIStore sharedAPIStore] getdirectionsForOriginLat:[self convertOriginToOriginLatitude] originLon:[self convertOriginToOriginLongitude] destinationLat: [self convertDestinationToDestinationLatitude] destinationLog:[self convertDestinationToDestinationLongitude] andDepartureTime:self.timeInterval withCompletion:^(NSArray *routeArray) {
-//        NSLog(@"route count:%d",[routeArray count]);
-//        
-//        [self performSegueWithIdentifier:@"tripsList" sender:(id) sender];
-//    }];
-//}
 
 #pragma  mark- ViewControllerProtocolMethods
 
@@ -352,7 +299,6 @@ NSNumber *lon =  [[APIStore sharedAPIStore] getLongitudeForStop:self.arrivalStat
 
 - (IBAction)goPressed:(id)sender {
     
-    
     if (!(self.year==0) && !(self.month ==0) && !(self.day ==0) && !(self.hour ==100) && !(self.minute ==100) && !([self.departureStation isEqualToString:@"Departure Station"]) && !([self.arrivalStation isEqualToString:@"Arrival Station"])){
         NSDate *chosenDate = [NSDate dateWithYear:self.year month:self.month day:self.day hour:self.hour minute:self.minute seconds:0];
         NSLog(@"go pressed");
@@ -375,7 +321,6 @@ NSNumber *lon =  [[APIStore sharedAPIStore] getLongitudeForStop:self.arrivalStat
             TripsListviewController *tlvc = [storyboard instantiateViewControllerWithIdentifier:@"tripsList"];
             [self.navigationController pushViewController:tlvc animated:YES];
         }];
-
     }
 }
 

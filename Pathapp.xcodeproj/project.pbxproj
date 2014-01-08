@@ -40,6 +40,8 @@
 		1682674C182C5B0D004A1060 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1682674B182C5B0D004A1060 /* libz.dylib */; };
 		16826750182C5B71004A1060 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1682674F182C5B71004A1060 /* ImageIO.framework */; };
 		16826756182C5C6D004A1060 /* APIStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 16826755182C5C6D004A1060 /* APIStore.m */; };
+		1683813F187D2D9100EDCFF6 /* timeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1683813E187D2D9100EDCFF6 /* timeicon.png */; };
+		16838141187D2D9900EDCFF6 /* calendaricon.png in Resources */ = {isa = PBXBuildFile; fileRef = 16838140187D2D9900EDCFF6 /* calendaricon.png */; };
 		16999C6F1854300100D48A39 /* swap.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 16999C6E1854300100D48A39 /* swap.jpeg */; };
 		16999C7118543ADD00D48A39 /* trainicon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 16999C7018543ADD00D48A39 /* trainicon.jpg */; };
 		16999C7818562A9200D48A39 /* StopTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 16999C7718562A9200D48A39 /* StopTimes.m */; };
@@ -127,6 +129,8 @@
 		1682674F182C5B71004A1060 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		16826754182C5C6D004A1060 /* APIStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIStore.h; sourceTree = "<group>"; };
 		16826755182C5C6D004A1060 /* APIStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIStore.m; sourceTree = "<group>"; };
+		1683813E187D2D9100EDCFF6 /* timeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timeicon.png; sourceTree = "<group>"; };
+		16838140187D2D9900EDCFF6 /* calendaricon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendaricon.png; sourceTree = "<group>"; };
 		16999C6E1854300100D48A39 /* swap.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swap.jpeg; sourceTree = "<group>"; };
 		16999C7018543ADD00D48A39 /* trainicon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = trainicon.jpg; sourceTree = "<group>"; };
 		16999C7618562A9200D48A39 /* StopTimes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopTimes.h; sourceTree = "<group>"; };
@@ -320,6 +324,8 @@
 				16C7C6411829F6D100F014D7 /* Images.xcassets */,
 				165BAB5018771259006F5409 /* swap.png */,
 				16999C6E1854300100D48A39 /* swap.jpeg */,
+				1683813E187D2D9100EDCFF6 /* timeicon.png */,
+				16838140187D2D9900EDCFF6 /* calendaricon.png */,
 				16C7C6301829F6D100F014D7 /* Supporting Files */,
 			);
 			path = Pathapp;
@@ -441,8 +447,10 @@
 				A35FB2C1183B34B1000E0E87 /* trainTrack.png in Resources */,
 				16999C6F1854300100D48A39 /* swap.jpeg in Resources */,
 				16634F20184CC2E600B556C9 /* GoogleMaps.bundle in Resources */,
+				16838141187D2D9900EDCFF6 /* calendaricon.png in Resources */,
 				165BAB5118771259006F5409 /* swap.png in Resources */,
 				16999C7118543ADD00D48A39 /* trainicon.jpg in Resources */,
+				1683813F187D2D9100EDCFF6 /* timeicon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

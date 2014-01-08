@@ -40,7 +40,6 @@
 
 - (IBAction)swapButtonClicked:(id)sender;
 
-
 @property (weak, nonatomic) IBOutlet UIButton *goButton;
 
 - (IBAction)goPressed:(id)sender;

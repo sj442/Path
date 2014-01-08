@@ -14,7 +14,6 @@
 @implementation APIStore
 
 +(APIStore*)sharedAPIStore {
-    
     static APIStore *sharedAPIStore = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -27,33 +26,22 @@
 -(void)getdirectionsForOriginLat:(NSNumber*)originLat originLon:(NSNumber*)originLon destinationLat:(NSNumber*)destinationLat destinationLog: (NSNumber*) destinationLon andDepartureTime:(NSNumber*)departureTime withCompletion:(void (^)(NSArray* routeArray))block{
     
     self.routesArray = [[NSMutableArray alloc]init];
-    
     NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/directions/json?origin=%@,%@&destination=%@,%@&sensor=false&departure_time=%@&mode=transit&alternatives=true", originLat, originLon, destinationLat, destinationLon, departureTime];
     
     NSURLRequest *urlRequest  = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    
-    // TODO(sunayna): Display route information in tableview and subsequent information for a particular route
-    // TODO(sunayna): Display on map
-    // TODO(sunayna): Better view for the app
-    
     for (int i=0; i<5; i++) {
-        
         AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:urlRequest success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
             
             NSLog(@"Json is:%@", JSON);
-
             NSArray *JSONarray = (NSArray*)JSON[@"routes"];
             
             for (NSDictionary *route in JSONarray) {
                 
                 NSMutableArray *routePatharray = [[NSMutableArray alloc]init];
-
                 bool route_valid = YES;
-                
                 NSArray *legs = route[@"legs"];
                 NSMutableArray *legArray = [[NSMutableArray alloc]init];
                 int tripDuration = 0;
-                
                 for (NSDictionary *leg in legs) {
                     NSArray *steps = leg[@"steps"];
                     tripDuration += [leg[@"duration"][@"value"] integerValue];
@@ -82,26 +70,22 @@
                             break;
                         }
                     }
-                    
                     if (route_valid == NO) {
                         break;
                     }
                 }
-                
                 if (route_valid == YES) {
                     RouteInfo *route = [[RouteInfo alloc]initWithLegs:legArray duration:tripDuration andPath:routePatharray];
                     [self.routesArray addObject:route];
                 }
             }
             block(self.routesArray);
-            
         } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
             if (error) {
                 NSLog(@"error is:%@", error);
                 [self.errorArray addObject:error];
             }
         }];
-        
         [operation start];
         if ([self.errorArray count] ==0) {
             break;
@@ -109,17 +93,11 @@
     }
 }
 
-
 -(NSNumber*)getLatitudeForStop:(NSString*)stopName{
-    
     NSNumber *lat = [[NSNumber alloc]init];
-    
     NSArray *stops = [DataStore sharedStore].stopsFetchedResultsController.fetchedObjects;
-    
     for (Stops *stop in stops) {
-        
         if ([stopName isEqualToString:stop.stopName]) {
-            
             lat = stop.latitude;
         }
     }
@@ -127,22 +105,14 @@
 }
 
 -(NSNumber*)getLongitudeForStop:(NSString*)stopName{
-    
     NSNumber *lon = [[NSNumber alloc]init];
-    
     NSArray *stops = [DataStore sharedStore].stopsFetchedResultsController.fetchedObjects;
-    
     for (Stops *stop in stops) {
-        
         if ([stopName isEqualToString:stop.stopName]) {
-            
             lon = stop.longitude;
-            
         }
     }
     return lon;
 }
-
-
 
 @end
