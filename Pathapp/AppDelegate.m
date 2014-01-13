@@ -21,7 +21,7 @@
     
     //[[DataStore sharedStore] jsonParser];
 
-    [[QueryManager sharedQueryManager] getTripsForDepartureStation:@"World Trade Center" andArrivalStation:@"Exchange Place" andDepartAtTime:@"06:00:00" andArriveByTime:@"07:00:00" andDate:@"12/09/13"];
+    [[QueryManager sharedQueryManager] getTripsForDepartureStation:@"Exchange Place" andArrivalStation:@"Grove Street" andDepartAtTime:@"06:00:00" andArriveByTime:@"07:00:00" andDate:@"01/11/14"];
     
     return YES;
 }

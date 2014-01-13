@@ -17,6 +17,11 @@
 
 +(QueryManager*)sharedQueryManager;
 
--(void)getTripsForDepartureStation:(NSString*)departureStation andArrivalStation:(NSString*) arrivalStation andDepartAtTime:(NSString*) departTime andArriveByTime:(NSString*)ArriveTime andDate:(NSString*)tripDate;
+-(NSArray*)getTripsForDepartureStation:(NSString*)departureStation andArrivalStation:(NSString*) arrivalStation andDepartAtTime:(NSString*) departTime andArriveByTime:(NSString*)ArriveTime andDate:(NSString*)tripDate;
+
+-(NSString*)getDayFromDate:(NSDate*)date;
+
+-(NSArray*)getStopTimeForTripID:(NSString*)tripID andStopSequence:(NSNumber*)stopSequence;
+
 
 @end

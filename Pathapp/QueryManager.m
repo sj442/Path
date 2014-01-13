@@ -14,6 +14,7 @@
 @interface QueryManager ()
 @property (strong, nonatomic) NSArray *stopsArray;
 @property (strong, nonatomic) NSArray *fetchedStoptimesArray;
+@property (strong, nonatomic) NSMutableArray *tripResults;
 @end
 
 @implementation QueryManager
@@ -79,9 +80,20 @@
     [fetchRequest setPredicate:predicate];
     NSError *error;
     self.fetchedStoptimesArray = [[DataStore sharedStore].managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    NSLog(@"fetchedStopTimesArray first object stop ID %@", ((StopTimes*)[_fetchedStoptimesArray firstObject]).stopID);
+    NSLog(@"fetchedStopTimesArray first object stop ID %@", ((StopTimes*)[self.fetchedStoptimesArray firstObject]).stopID);
     NSLog(@"fetchedStopTimesArray count %d", [self.fetchedStoptimesArray count]);
     block(self.fetchedStoptimesArray);
+}
+
+-(NSArray*)fetchStoptimesForTripID:(NSString*)tripID{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"StopTimes" inManagedObjectContext:[DataStore sharedStore].managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tripID ==%@", tripID];
+    [fetchRequest setPredicate:predicate];
+    NSError *error;
+    NSArray *array = [[DataStore sharedStore].managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    return array;
 }
 
 -(NSArray*)getTripsForArrivalstopID:(NSNumber*)arrivalStopID andTime:(NSString*)time andDate:(NSString*)date{
@@ -90,7 +102,6 @@
         [self fetchStopTimesForStopID:arrivalStopID andStopTime:time withCompletionBlock:^(NSArray *array) {
             NSDate *tripDate = [[NSDate alloc]init];
             tripDate = [self createDateFromTimeString:time andTripDateString:date];
-            //NSLog(@"tripDate %@", tripDate);
         for (StopTimes *stoptime in array){
             NSString *timeString =stoptime.arrivalTime;
             NSDate *trainTripDate = [[NSDate alloc]init];
@@ -101,7 +112,6 @@
             [tripsArray addObject:trips];
         }
     }];
-    //NSLog(@"tripsArray %@", [tripsArray description]);
     return tripsArray;
 }
 
@@ -114,37 +124,72 @@
     return date;
 }
 
--(StopTimes*)getStopTimeForTripID:(NSString*)tripID andStopSequence:(NSNumber*)stopSequence{
-    for (StopTimes *stopTime in self.fetchedStoptimesArray){
-        if (([stopTime.stop_sequence integerValue] == [stopSequence integerValue]-1) && [stopTime.tripID isEqualToString:tripID]){
-            return stopTime;
+-(NSArray*)getStopTimeForTripID:(NSString*)tripID andStopSequence:(NSNumber*)stopSequence{
+    NSLog(@"get stoptimes for tripid and stopsequence called");
+    NSLog(@"tripID %@", tripID);
+    NSLog(@"stopsequence %@", stopSequence);
+    NSArray *array = [self fetchStoptimesForTripID:tripID];
+    NSMutableArray *validStoptimesArray = [[NSMutableArray alloc]init];
+    NSNumber *givenStopSequence =[NSNumber numberWithInteger:[stopSequence integerValue]-1];
+    NSNumber *givenStopSequence1 = [NSNumber numberWithInteger:[stopSequence integerValue]+1];
+    for (StopTimes *stopTime in array){
+        if ([stopSequence isEqualToNumber:@1]){
+            break;
+        } else if ([tripID isEqualToString:stopTime.tripID] && [givenStopSequence isEqualToNumber:stopTime.stop_sequence]){
+            NSLog(@"1 stoptime less %@", stopTime);
+            [validStoptimesArray addObject:stopTime];
+        } else if ([tripID isEqualToString:stopTime.tripID] && [givenStopSequence1 isEqualToNumber:stopTime.stop_sequence]){
+            //NSLog(@"1 stoptime more %@", stopTime);
+            //[validStoptimesArray addObject:stopTime];
         }
     }
-    return nil;
+    return array;
 }
 
--(void)getTripsForDepartureStation:(NSString*)departureStation andArrivalStation:(NSString*) arrivalStation andDepartAtTime:(NSString*) departTime andArriveByTime:(NSString*)ArriveTime andDate:(NSString*)date{
-    //NSMutableArray *routes = [[NSMutableArray alloc] init];
-    //NSNumber *departureStopID = [self getStopIDForStation:departureStation];
+-(NSString*)getDayFromDate:(NSDate*)date{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    NSString *day= [dateFormatter stringFromDate:date];
+    NSLog(@"day is %@", day);
+    return day;
+}
+
+-(NSArray*)getTripsForDepartureStation:(NSString*)departureStation andArrivalStation:(NSString*) arrivalStation andDepartAtTime:(NSString*) departTime andArriveByTime:(NSString*)ArriveTime andDate:(NSString*)date{
+    self.tripResults = [[NSMutableArray alloc]init];
     NSNumber *arrivalStopID = [self getStopIDForStation:arrivalStation];
+    NSNumber *departureStopID = [self getStopIDForStation:departureStation];
     NSLog(@"arrival stopId %@", arrivalStopID);
+    NSLog(@"departure stopId %@", departureStopID);
     NSArray *tripsArray = [self getTripsForArrivalstopID:arrivalStopID andTime:departTime andDate:date];
     NSLog(@"trips array count %d", [tripsArray count]);
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"timeDifference" ascending:YES];
     NSArray *descriptors = [NSArray arrayWithObject:sortDescriptor];
     NSArray *sortedArray  =[tripsArray sortedArrayUsingDescriptors:descriptors];
-    NSLog(@"sorted array %@", [sortedArray description]);
     NSMutableArray *validTripsArray = [[NSMutableArray alloc]init];
-    for (int i=0; i<10; i++){
+    for (int i=0; i<20; i++){
         NSInteger timeDifference = [[sortedArray[i] objectForKey:@"timeDifference"] integerValue];
         if ((timeDifference !=0) && (timeDifference<7200)){
             [validTripsArray addObject:sortedArray[i]];
         }
-        for (NSDictionary *trip in validTripsArray){
-            [self fetchStopTimesForTripID:[trip objectForKey:@"tripID"] withCompletionBlock:^(NSArray *array) {
-            }];
+    }
+    NSLog(@"valid trips array count %d", [validTripsArray count]);
+    for (NSDictionary *trip in validTripsArray){
+        if ([[trip objectForKey:@"stopSequence"] isEqualToNumber:@1] || [[trip objectForKey:@"stopSequence"] isEqualToNumber:@6]){
+        } else {
+            NSArray *array= [self getStopTimeForTripID:[trip objectForKey:@"tripID"] andStopSequence:[trip objectForKey:@"stopSequence"]];
+            for (StopTimes *stoptime in array){
+                if ([stoptime.stopID isEqualToNumber:departureStopID]){
+                    [self.tripResults addObject:trip];
+                } else {
+                    [self getTripsForDepartureStation:departureStation andArrivalStation:[self getStopNameForStopID:stoptime.stopID] andDepartAtTime:departTime  andArriveByTime:departTime andDate:date];
+                }
+            }
         }
     }
+    NSLog(@"valid trips array %@", [validTripsArray description]);
+    NSLog(@"result array count:%d", [self.tripResults count]);
+    NSLog(@"result array first object:%@", [self.tripResults firstObject]);
+    return self.tripResults;
 }
 
 @end
